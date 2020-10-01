@@ -1,9 +1,9 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'https://juniperviewer.com/');
+define('HTTP_SERVER', 'https://www.juniperviewer.com/');
 
 // HTTPS
-define('HTTPS_SERVER', 'https://juniperviewer.com/');
+define('HTTPS_SERVER', 'https://www.juniperviewer.com/');
 
 // DIR
 define('DIR_APPLICATION', '/home/u255408233/domains/juniperviewer.com/public_html/catalog/');
