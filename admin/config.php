@@ -1,11 +1,11 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'https://www.juniperviewer.com/admin/');
-define('HTTP_CATALOG', 'https://www.juniperviewer.com/');
+define('HTTP_SERVER', 'https://juniperviewer.com/admin/');
+define('HTTP_CATALOG', 'https://juniperviewer.com/');
 
 // HTTPS
-define('HTTPS_SERVER', 'https://www.juniperviewer.com/admin/');
-define('HTTPS_CATALOG', 'https://www.juniperviewer.com/');
+define('HTTPS_SERVER', 'https://juniperviewer.com/admin/');
+define('HTTPS_CATALOG', 'https://juniperviewer.com/');
 
 // DIR
 define('DIR_APPLICATION', '/home/u255408233/domains/juniperviewer.com/public_html/admin/');
