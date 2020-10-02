@@ -1,0 +1,213 @@
+2020-05-14 15:53:55 - 
+ERROR: FILE NOT FOUND!
+FILE: /home3/pluscomp/public_html/pluscomputer-2018/system/engine/front.php
+MOD: aGDPR
+
+ERROR: FILE NOT FOUND!
+FILE: /home3/pluscomp/public_html/pluscomputer-2018/catalog/controller/extension/quickcheckout/terms.php
+MOD: aGDPR
+
+ERROR: FILE NOT FOUND!
+FILE: /home3/pluscomp/public_html/pluscomputer-2018/catalog/controller/quickcheckout/terms.php
+MOD: aGDPR
+
+ERROR: FILE NOT FOUND!
+FILE: /home3/pluscomp/public_html/pluscomputer-2018/catalog/controller/journal3/checkout.php
+MOD: aGDPR
+
+ERROR: FILE NOT FOUND!
+FILE: /home3/pluscomp/public_html/pluscomputer-2018/catalog/model/affiliate/affiliate.php
+MOD: aGDPR
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/model/account/return.php
+CODE: $return_id = $this->db->getLastId();
+MOD: aGDPR
+
+ERROR: FILE NOT FOUND!
+FILE: /home3/pluscomp/public_html/pluscomputer-2018/admin/view/template/common/menu.tpl
+MOD: aGDPR
+
+ERROR: FILE NOT FOUND!
+FILE: /home3/pluscomp/public_html/pluscomputer-2018/system/library/journal3/opencart/menucontroller.php
+MOD: aGDPR
+
+ERROR: FILE NOT FOUND!
+FILE: /home3/pluscomp/public_html/pluscomputer-2018/catalog/controller/journal3/footer_menu.php
+MOD: aGDPR
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/op-blueblack/template/common/footer.twig
+CODE: <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>
+MOD: aGDPR
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/bonaventure/template/common/header.twig
+CODE: {{ menu }}
+MOD: Clear Cart
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/oc-boxed-modificat/template/product/product.twig
+CODE: <li>{{ text_stock }} {{ stock }}</li>
+MOD: ColorStockText
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/op-blueblack/template/product/product.twig
+CODE: <li>{{ text_stock }} {{ stock }}</li>
+MOD: ColorStockText
+
+ERROR: FILE NOT FOUND!
+FILE: /home3/pluscomp/public_html/pluscomputer-2018/admin/view/template/common/dashboard.tpl
+MOD: Facebook Business Extension
+
+ERROR: FILE NOT FOUND!
+FILE: /home3/pluscomp/public_html/pluscomputer-2018/admin/controller/common/menu.php
+MOD: Facebook Business Extension
+
+ERROR: FILE NOT FOUND!
+FILE: /home3/pluscomp/public_html/pluscomputer-2018/admin/view/template/common/menu.tpl
+MOD: Facebook Business Extension
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/bonaventure/template/common/header.tpl
+CODE: </header>
+MOD: Facebook Business Extension
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/bonaventure/template/common/header.twig
+CODE: </head>
+MOD: Facebook Business Extension
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/bonaventure/template/common/header.twig
+CODE: </header>
+MOD: Facebook Business Extension
+
+ERROR: CODE NOT FOUND!
+FILE: system/engine/router.php
+CODE: while ($action) {
+MOD: Facebook Business Extension
+
+ERROR: CODE NOT FOUND!
+FILE: system/engine/router.php
+CODE: public function dispatch($action, $error) {
+MOD: Facebook Business Extension
+
+ERROR: FILE NOT FOUND!
+FILE: /home3/pluscomp/public_html/pluscomputer-2018/system/engine/front.php
+MOD: Facebook Business Extension
+
+ERROR: FILE NOT FOUND!
+FILE: /home3/pluscomp/public_html/pluscomputer-2018/system/engine/front.php
+MOD: Facebook Business Extension
+
+ERROR: FILE NOT FOUND!
+FILE: /home3/pluscomp/public_html/pluscomputer-2018/system/engine/front.php
+MOD: Facebook Business Extension
+
+ERROR: FILE NOT FOUND!
+FILE: /home3/pluscomp/public_html/pluscomputer-2018/system/engine/front.php
+MOD: Facebook Business Extension
+
+ERROR: FILE NOT FOUND!
+FILE: /home3/pluscomp/public_html/pluscomputer-2018/system/engine/front.php
+MOD: Facebook Business Extension
+
+ERROR: FILE NOT FOUND!
+FILE: /home3/pluscomp/public_html/pluscomputer-2018/system/engine/front.php
+MOD: Facebook Business Extension
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/bonaventure/template/common/footer.tpl
+CODE: </footer>
+MOD: Facebook Business Extension
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/bonaventure/template/common/footer.tpl
+CODE: </footer>
+MOD: Facebook Business Extension
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/oc-boxed-modificat/template/product/search.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+MOD: Hide/Lock Add to Cart if Out of Stock
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/oc-boxed/template/product/search.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+MOD: Hide/Lock Add to Cart if Out of Stock
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/op-blueblack/template/product/search.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+MOD: Hide/Lock Add to Cart if Out of Stock
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/controller/checkout/confirm.php
+CODE: <td colspan="4" class="text-right">
+MOD: Truesupplier-account order product image
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/default/template/product/compare.twig
+CODE: class="image"
+MOD: wid sold out
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/default/template/product/jsub_category.twig
+CODE: button_cart
+MOD: wid sold out
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/default/template/product/manufacturer_list.twig
+CODE: button_cart
+MOD: wid sold out
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/default/template/product/review.twig
+CODE: button_cart
+MOD: wid sold out
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/oc-boxed-modificat/template/product/category.twig
+CODE: onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"
+MOD: wid sold out
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/oc-boxed-modificat/template/product/product.twig
+CODE: onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"
+MOD: wid sold out
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/oc-boxed-modificat/template/product/search.twig
+CODE: onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"
+MOD: wid sold out
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/oc-boxed/template/product/category.twig
+CODE: onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"
+MOD: wid sold out
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/oc-boxed/template/product/product.twig
+CODE: onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"
+MOD: wid sold out
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/oc-boxed/template/product/search.twig
+CODE: onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"
+MOD: wid sold out
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/op-blueblack/template/product/category.twig
+CODE: button_cart
+MOD: wid sold out
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/op-blueblack/template/product/product.twig
+CODE: button_cart
+MOD: wid sold out
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/op-blueblack/template/product/search.twig
+CODE: button_cart
+MOD: wid sold out
