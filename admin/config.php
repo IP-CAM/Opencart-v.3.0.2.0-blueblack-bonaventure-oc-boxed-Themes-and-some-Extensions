@@ -11,7 +11,7 @@ define('HTTPS_CATALOG', 'https://juniperviewer.com/');
 define('DIR_APPLICATION', '/home/u255408233/domains/juniperviewer.com/public_html/admin/');
 define('DIR_SYSTEM', '/home/u255408233/domains/juniperviewer.com/public_html/system/');
 define('DIR_IMAGE', '/home/u255408233/domains/juniperviewer.com/public_html/image/');
-define('DIR_STORAGE', DIR_SYSTEM . 'storage/');
+define('DIR_STORAGE', '/home/u255408233/domains/juniperviewer.com/pluscomputer-2018-storage/');
 define('DIR_CATALOG', '/home/u255408233/domains/juniperviewer.com/public_html/catalog/');
 define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
 define('DIR_TEMPLATE', DIR_APPLICATION . 'view/template/');
