@@ -4217,8 +4217,9 @@ function refreshAll(){
     $('#shippingMethodLoader').show();
     $.ajax({
         url: 'index.php?route=supercheckout/shipping_method',
-        dataType: 'html',
+        type: "POST",
         data: 'city_id=' + $("select[name='city']").val(),
+        dataType: 'html',
         success: function(html) {
             $.ajax({ //shipping_method/validate ajax start here -->patch to update cost in confirm cart
             url: 'index.php?route=supercheckout/shipping_method/validate',
