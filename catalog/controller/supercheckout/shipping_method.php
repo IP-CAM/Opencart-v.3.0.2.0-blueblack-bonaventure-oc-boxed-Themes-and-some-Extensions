@@ -149,6 +149,7 @@ class ControllerSupercheckoutShippingMethod extends Controller {
         $this->session->data['shipping_methods'] = array();
         $all_shipping_keys = array_keys($all_shipping);
         foreach ($this->session->data['available_shipping'] as $key => $value) {
+            if ($key == "sameday" && !$this->confirm_sameday($this->request->post['city_id'])) continue;
             if(in_array($key, $all_shipping_keys)){
                 $this->session->data['shipping_methods'][$key] = $all_shipping[$key];
             }
@@ -360,6 +361,40 @@ class ControllerSupercheckoutShippingMethod extends Controller {
                 }
         }
         $this->response->setOutput(json_encode($json));
+    }
+
+    function confirm_sameday($city_id) {
+        if (!isset($city_id)) {
+            return false;
+        }
+        
+        $this->load->model('setting/setting');
+        if (isset($this->request->get['store_id'])) {
+            $store_id = $this->request->get['store_id'];
+        } else {
+            $store_id = 0;
+        }
+        $shipping_sameday_settings = $this->model_setting_setting->getSetting('shipping_sameday', $store_id);
+        
+        if (!isset($shipping_sameday_settings['shipping_sameday_status']) || $shipping_sameday_settings['shipping_sameday_status'] != 1) {
+            return false;
+        }
+        
+        if (!isset($shipping_sameday_settings['shipping_sameday_geo_zone_id']) || $shipping_sameday_settings['shipping_sameday_geo_zone_id'] == 0) {
+            return false;
+        }
+
+        $this->load->model('localisation/geo_zone');
+        $geo_zone_info = $this->model_localisation_geozone->getGeoZone($shipping_sameday_settings['shipping_sameday_geo_zone_id']);
+        if (!isset($geo_zone_info)) {
+            return false;
+        }
+
+        if ($this->model_localisation_geozone->getTotalZoneToGeoZoneByCityId($city_id) == 0) {
+            return false;
+        }
+
+        return true;
     }
 }
 

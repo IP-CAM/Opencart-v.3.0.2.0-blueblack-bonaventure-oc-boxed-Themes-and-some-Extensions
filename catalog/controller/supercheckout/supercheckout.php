@@ -1955,6 +1955,7 @@ class ControllerSupercheckoutSuperCheckout extends Controller {
             foreach ($cities as $city) {
                 $json[] = array(
                   'zone_id' => $city['zone_id'],
+                  'city_id' => $city['city_id'],
                   'name' => $city['name']
                 );
             }
