@@ -149,7 +149,7 @@ class ControllerSupercheckoutShippingMethod extends Controller {
         $this->session->data['shipping_methods'] = array();
         $all_shipping_keys = array_keys($all_shipping);
         foreach ($this->session->data['available_shipping'] as $key => $value) {
-            if ($key == "sameday" && !$this->confirm_sameday($this->request->post['city_id'])) continue;
+            if ($key == "sameday" && ($this->request->post['city_id'] == "null" || !$this->confirm_sameday($this->request->post['city_id']))) continue;
             if(in_array($key, $all_shipping_keys)){
                 $this->session->data['shipping_methods'][$key] = $all_shipping[$key];
             }
