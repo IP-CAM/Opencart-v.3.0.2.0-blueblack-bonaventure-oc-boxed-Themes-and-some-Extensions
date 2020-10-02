@@ -19,6 +19,7 @@ $_['entry_name']         = 'Nume Zonă Geografică';
 $_['entry_description']  = 'Descriere:';
 $_['entry_country']      = 'Țara';
 $_['entry_zone']         = 'Zona';
+$_['entry_city']         = 'Oraș';
 
 // Error
 $_['error_permission']   = 'Eroare: Nu ai permisiunile necesare pentru a modifica această pagină. Contactează administratorul pentru asistență. Daca ești administrator mergi in admin la grupuri de utilizatori și actualizează permisiunile!';

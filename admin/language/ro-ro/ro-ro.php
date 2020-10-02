@@ -19,6 +19,7 @@ $_['text_select']                   = ' --- Selectează --- ';
 $_['text_select_all']               = 'Selectează Tot';
 $_['text_unselect_all']             = 'Deselectează  Tot';
 $_['text_all_zones']                = 'Toate Zonele';
+$_['text_all_cities']                = 'Toate Orase';
 $_['text_default']                  = ' <b>(Implicit)</b>';
 $_['text_close']                    = 'Închide';
 $_['text_pagination']               = 'Se afişează %d la %d din %d (%d Pagini)';

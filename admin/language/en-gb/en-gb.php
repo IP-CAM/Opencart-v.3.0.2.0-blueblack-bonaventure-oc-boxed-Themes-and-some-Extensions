@@ -19,6 +19,7 @@ $_['text_select']                   = ' --- Please Select --- ';
 $_['text_select_all']               = 'Select All';
 $_['text_unselect_all']             = 'Unselect All';
 $_['text_all_zones']                = 'All Zones';
+$_['text_all_cities']                = 'All Cities';
 $_['text_default']                  = ' <b>(Default)</b>';
 $_['text_close']                    = 'Close';
 $_['text_pagination']               = 'Showing %d to %d of %d (%d Pages)';
