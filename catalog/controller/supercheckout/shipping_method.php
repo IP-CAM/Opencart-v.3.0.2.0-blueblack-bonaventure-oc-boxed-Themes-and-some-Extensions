@@ -384,12 +384,15 @@ class ControllerSupercheckoutShippingMethod extends Controller {
             return false;
         }
         
-        $geo_zone_id = $shipping_settings['shipping_' . $payment_method . '_geo_zone_id'];
-
-        if (!isset($geo_zone_id) || $geo_zone_id == 0) {
+        if (!isset($shipping_settings['shipping_' . $payment_method . '_geo_zone_id'])) {
             return true;
         }
-
+        
+        $geo_zone_id = $shipping_settings['shipping_' . $payment_method . '_geo_zone_id'];
+        if ($geo_zone_id == 0) {
+            return true;
+        }
+        
         $this->load->model('localisation/geo_zone');
 
         if ($this->model_localisation_geo_zone->getTotalZoneToGeoZoneByDetail($geo_zone_id, $country_id, 0, 0) > 0) {
