@@ -157,7 +157,7 @@ class ControllerSupercheckoutShippingMethod extends Controller {
             }
         }
         if (in_array("sameday", array_keys($this->session->data['shipping_methods']))) {
-            $this->session->data['shipping_method'] = $this->session->data['shipping_methods'][$key];
+            $this->session->data['shipping_method'] = $this->session->data['shipping_methods']['sameday'];
         }
         $data['language_id'] = $this->config->get('config_language_id');
         $data['text_shipping_method'] = $this->language->get('text_shipping_method');
