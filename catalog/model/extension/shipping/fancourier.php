@@ -500,7 +500,7 @@ class ModelExtensionShippingFANCourier extends Model {
                                             'sort_order' => '1',
                                             'error'      => $error
                                     );
-                                    //if ($error != true)
+                                    if ($error != true)
                                    	 return $method_data;
                         }
 
