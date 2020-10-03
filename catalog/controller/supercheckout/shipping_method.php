@@ -388,7 +388,7 @@ class ControllerSupercheckoutShippingMethod extends Controller {
 
         if ($payment_method == "xshipping") {
             if (!isset($shipping_settings['shipping_xshipping_methods'])) return false;
-            $xshipping_settings = json_decode($shipping_settings['shipping_xshipping_methods']);
+            $xshipping_settings = $shipping_settings['shipping_xshipping_methods'];
             $index = 0;
             for (;;) {
                 $index++;
