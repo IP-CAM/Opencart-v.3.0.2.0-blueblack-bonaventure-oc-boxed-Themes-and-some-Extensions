@@ -406,6 +406,7 @@ class ControllerSupercheckoutShippingMethod extends Controller {
                 if ($this->model_localisation_geo_zone->getTotalZoneToGeoZoneByDetail($geo_zone_id, $country_id, $zone_id, $city_id) > 0) {
                     return true;
                 }
+                $index++;
             }
         }
 
