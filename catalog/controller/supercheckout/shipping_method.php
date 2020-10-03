@@ -149,7 +149,7 @@ class ControllerSupercheckoutShippingMethod extends Controller {
         $this->session->data['shipping_methods'] = array();
         $all_shipping_keys = array_keys($all_shipping);
         foreach ($this->session->data['available_shipping'] as $key => $value) {
-            if ($key == "sameday" && (!isset($_POST['city_id']) || $this->request->post['city_id'] == "" || $this->request->post['city_id'] == "null" || !$this->confirm_sameday($this->request->post['city_id']))) continue;
+            if (!isset($_POST['city_id']) || $this->request->post['city_id'] == "" || $this->request->post['city_id'] == "null" || !$this->confirm_payment_method($this->request->post['city_id'], $key)) continue;
             if(in_array($key, $all_shipping_keys)){
                 $this->session->data['shipping_methods'][$key] = $all_shipping[$key];
             }
@@ -363,7 +363,7 @@ class ControllerSupercheckoutShippingMethod extends Controller {
         $this->response->setOutput(json_encode($json));
     }
 
-    function confirm_sameday($city_id) {
+    function confirm_payment_method($city_id, $payment_method) {
         if (!isset($city_id)) {
             return false;
         }
@@ -374,16 +374,16 @@ class ControllerSupercheckoutShippingMethod extends Controller {
         } else {
             $store_id = 0;
         }
-        $shipping_sameday_settings = $this->model_setting_setting->getSetting('shipping_sameday', $store_id);
+        $shipping_settings = $this->model_setting_setting->getSetting('shipping_' . $payment_method, $store_id);
         
-        if (!isset($shipping_sameday_settings['shipping_sameday_status']) || $shipping_sameday_settings['shipping_sameday_status'] != 1) {
+        if (!isset($shipping_settings['shipping_' . $payment_method . '_status']) || $shipping_settings['shipping_' . $payment_method . '_status'] != 1) {
             return false;
         }
         
-        if (!isset($shipping_sameday_settings['shipping_sameday_geo_zone_id']) || $shipping_sameday_settings['shipping_sameday_geo_zone_id'] == 0) {
+        if (!isset($shipping_settings['shipping_' . $payment_method . '_geo_zone_id']) || $shipping_settings['shipping_' . $payment_method . '_geo_zone_id'] == 0) {
             return false;
         }
-        $geo_zone_id = $shipping_sameday_settings['shipping_sameday_geo_zone_id'];
+        $geo_zone_id = $shipping_settings['shipping_' . $payment_method . '_geo_zone_id'];
 
         $this->load->model('localisation/geo_zone');
         if ($this->model_localisation_geo_zone->getTotalZoneToGeoZoneByGeoZoneId($geo_zone_id) == 0) {
