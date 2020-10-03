@@ -408,6 +408,7 @@ class ControllerSupercheckoutShippingMethod extends Controller {
                     return true;
                 }
             }
+            return false;
         }
 
         if (!isset($shipping_settings['shipping_' . $payment_method . '_geo_zone_id'])) {
