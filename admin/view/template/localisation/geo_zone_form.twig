@@ -56,7 +56,7 @@
               {% set zone_to_geo_zone_row = 0 %}
               {% for zone_to_geo_zone in zone_to_geo_zones %}
               <tr id="zone-to-geo-zone-row{{ zone_to_geo_zone_row }}">
-                <td class="text-left"><select name="zone_to_geo_zone[{{ zone_to_geo_zone_row }}][country_id]" class="form-control" data-index="{{ zone_to_geo_zone_row }}" data-zone-id="{{ zone_to_geo_zone.zone_id }}" disabled="disabled">
+                <td class="text-left" style="width: 30%"><select name="zone_to_geo_zone[{{ zone_to_geo_zone_row }}][country_id]" class="form-control select2-select" data-index="{{ zone_to_geo_zone_row }}" data-zone-id="{{ zone_to_geo_zone.zone_id }}" disabled="disabled">
                     
                     {% for country in countries %}
                     {% if country.country_id == zone_to_geo_zone.country_id %}
@@ -71,9 +71,9 @@
                     {% endfor %}
                   
                   </select></td>
-                <td class="text-left"><select name="zone_to_geo_zone[{{ zone_to_geo_zone_row }}][zone_id]" class="form-control"  data-index="{{ zone_to_geo_zone_row }}" data-city-id="{{ zone_to_geo_zone.city_id }}" disabled="disabled">
+                <td class="text-left" style="width: 30%"><select name="zone_to_geo_zone[{{ zone_to_geo_zone_row }}][zone_id]" class="form-control select2-select"  data-index="{{ zone_to_geo_zone_row }}" data-city-id="{{ zone_to_geo_zone.city_id }}" disabled="disabled">
                   </select></td>
-                <td class="text-left"><select name="zone_to_geo_zone[{{ zone_to_geo_zone_row }}][city_id]" class="form-control" disabled="disabled">
+                <td class="text-left" style="width: 30%"><select name="zone_to_geo_zone[{{ zone_to_geo_zone_row }}][city_id]" class="form-control select2-select" disabled="disabled">
                   </select></td>
                 <td class="text-left"><button type="button" onclick="$('#zone-to-geo-zone-row{{ zone_to_geo_zone_row }}').remove();" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
               </tr>
@@ -98,13 +98,13 @@ var zone_to_geo_zone_row = {{ zone_to_geo_zone_row }};
 
 $('#button-geo-zone').on('click', function() {
 	html  = '<tr id="zone-to-geo-zone-row' + zone_to_geo_zone_row + '">';
-	html += '  <td class="text-left"><select name="zone_to_geo_zone[' + zone_to_geo_zone_row + '][country_id]" class="form-control" data-index="' + zone_to_geo_zone_row + '">';
+	html += '  <td class="text-left" style="width: 30%"><select name="zone_to_geo_zone[' + zone_to_geo_zone_row + '][country_id]" class="form-control select2-select" data-index="' + zone_to_geo_zone_row + '">';
 	{% for country in countries %}
 	html += '    <option value="{{ country.country_id }}">{{ country.name|escape('js') }}</option>';
 	{% endfor %}   
 	html += '</select></td>';
-	html += '  <td class="text-left"><select name="zone_to_geo_zone[' + zone_to_geo_zone_row + '][zone_id]" class="form-control" data-index="' + zone_to_geo_zone_row + '"><option value="0">{{ text_all_zones }}</option></select></td>';
-  html += '  <td class="text-left"><select name="zone_to_geo_zone[' + zone_to_geo_zone_row + '][city_id]" class="form-control"><option value="0">{{ text_all_cities }}</option></select></td>';
+	html += '  <td class="text-left" style="width: 30%"><select name="zone_to_geo_zone[' + zone_to_geo_zone_row + '][zone_id]" class="form-control select2-select" data-index="' + zone_to_geo_zone_row + '"><option value="0">{{ text_all_zones }}</option></select></td>';
+  html += '  <td class="text-left" style="width: 30%"><select name="zone_to_geo_zone[' + zone_to_geo_zone_row + '][city_id]" class="form-control select2-select"><option value="0">{{ text_all_cities }}</option></select></td>';
 	html += '  <td class="text-left"><button type="button" onclick="$(\'#zone-to-geo-zone-row' + zone_to_geo_zone_row + '\').remove();" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
 	html += '</tr>';
 	
@@ -204,5 +204,9 @@ $('#zone-to-geo-zone').on('change', 'select[name$=\'[zone_id]\']', function() {
 });
 
 $('select[name$=\'[country_id]\']:disabled:first').trigger('change');
+
+$(document).ready(function() {
+  $('.select2-select').select2();
+});
 //--></script></div>
 {{ footer }}
