@@ -149,7 +149,8 @@ class ControllerSupercheckoutShippingMethod extends Controller {
         $this->session->data['shipping_methods'] = array();
         $all_shipping_keys = array_keys($all_shipping);
         foreach ($this->session->data['available_shipping'] as $key => $value) {
-            if (!isset($_POST['city_id']) || $this->request->post['city_id'] == "" || $this->request->post['city_id'] == "null" || !$this->confirm_payment_method($this->request->post['city_id'], $key)) continue;
+            if (!isset($_POST['country_id']) || !isset($_POST['zone_id']) || !isset($_POST['city_id']) || 
+                !$this->confirm_payment_method($key, $this->request->post['country_id'], $this->request->post['zone_id'], $this->request->post['city_id'])) continue;
             if(in_array($key, $all_shipping_keys)){
                 $this->session->data['shipping_methods'][$key] = $all_shipping[$key];
             }
@@ -363,11 +364,14 @@ class ControllerSupercheckoutShippingMethod extends Controller {
         $this->response->setOutput(json_encode($json));
     }
 
-    function confirm_payment_method($city_id, $payment_method) {
-        if (!isset($city_id)) {
+    function confirm_payment_method($payment_method, $country_id, $zone_id, $city_id) {
+        if (!isset($country_id) || !isset($zone_id) || !isset($city_id)) {
             return false;
         }
-        
+        if ($country_id == "" || $country_id == "null") $country_id = 0;
+        if ($zone_id == "" || $zone_id == "null") $zone_id = 0;
+        if ($city_id == "" || $city_id == "null") $city_id = 0;
+
         $this->load->model('setting/setting');
         if (isset($this->request->get['store_id'])) {
             $store_id = $this->request->get['store_id'];
@@ -386,15 +390,18 @@ class ControllerSupercheckoutShippingMethod extends Controller {
         $geo_zone_id = $shipping_settings['shipping_' . $payment_method . '_geo_zone_id'];
 
         $this->load->model('localisation/geo_zone');
-        if ($this->model_localisation_geo_zone->getTotalZoneToGeoZoneByGeoZoneId($geo_zone_id) == 0) {
-            return false;
+
+        if ($this->model_localisation_geo_zone->getTotalZoneToGeoZoneByDetail($geo_zone_id, $country_id, 0, 0) > 0) {
+            return true;
+        }
+        if ($this->model_localisation_geo_zone->getTotalZoneToGeoZoneByDetail($geo_zone_id, $country_id, $zone_id, 0) > 0) {
+            return true;
+        }
+        if ($this->model_localisation_geo_zone->getTotalZoneToGeoZoneByDetail($geo_zone_id, $country_id, $zone_id, $city_id) > 0) {
+            return true;
         }
 
-        if ($this->model_localisation_geo_zone->getTotalZoneToGeoZoneByGeoZoneIdCityId($geo_zone_id, $city_id) == 0) {
-            return false;
-        }
-
-        return true;
+        return false;
     }
 }
 

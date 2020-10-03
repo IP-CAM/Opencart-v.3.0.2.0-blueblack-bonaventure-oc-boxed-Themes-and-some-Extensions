@@ -134,8 +134,8 @@ class ModelLocalisationGeoZone extends Model {
 		return $query->row['total'];
 	}
 	
-	public function getTotalZoneToGeoZoneByGeoZoneIdCityId($geo_zone_id, $city_id) {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "zone_to_geo_zone WHERE geo_zone_id = '" . (int)$geo_zone_id . "' AND city_id = '" . (int)$city_id . "'");
+	public function getTotalZoneToGeoZoneByDetail($geo_zone_id, $country_id, $zone_id, $city_id) {
+		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "zone_to_geo_zone WHERE geo_zone_id = '" . (int)$geo_zone_id . "' AND country_id = '" . (int)$country_id . "' AND zone_id = '" . (int)$zone_id . "' AND city_id = '" . (int)$city_id . "'");
 
 		return $query->row['total'];
 	}
