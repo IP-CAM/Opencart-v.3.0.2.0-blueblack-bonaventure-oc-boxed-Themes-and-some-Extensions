@@ -186,6 +186,7 @@ class ControllerSupercheckoutPaymentMethod extends Controller {
             }
         }
 //        var_dump($this->session->data);die;
+        if (!isset($_SESSION['shipping_method'])) die("error");
         $shipping_method_selected = explode('.', $this->session->data['shipping_method']['code'])[0];
         $shipping_method_payments = $this->session->data['available_shipping'][$shipping_method_selected];
         $get_first_method_payment = array();
