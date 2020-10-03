@@ -380,11 +380,15 @@ class ControllerSupercheckoutShippingMethod extends Controller {
         }
         $shipping_settings = $this->model_setting_setting->getSetting('shipping_' . $payment_method, $store_id);
         
-        if (!isset($shipping_settings['shipping_' . $payment_method . '_status']) || $shipping_settings['shipping_' . $payment_method . '_status'] != 1) {
+        if (!isset($shipping_settings['shipping_' . $payment_method . '_status'])) {
+            return true;
+        }
+
+        if ($shipping_settings['shipping_' . $payment_method . '_status'] != 1) {
             return false;
         }
         
-        if (!isset($shipping_settings['shipping_' . $payment_method . '_geo_zone_id']) || $shipping_settings['shipping_' . $payment_method . '_geo_zone_id'] == 0) {
+        if (!isset($shipping_settings['shipping_' . $payment_method . '_geo_zone_id'])) {
             return false;
         }
         $geo_zone_id = $shipping_settings['shipping_' . $payment_method . '_geo_zone_id'];
