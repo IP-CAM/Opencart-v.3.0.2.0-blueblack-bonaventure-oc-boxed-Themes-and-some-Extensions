@@ -383,13 +383,14 @@ class ControllerSupercheckoutShippingMethod extends Controller {
         if (!isset($shipping_sameday_settings['shipping_sameday_geo_zone_id']) || $shipping_sameday_settings['shipping_sameday_geo_zone_id'] == 0) {
             return false;
         }
+        $geo_zone_id = $shipping_sameday_settings['shipping_sameday_geo_zone_id'];
 
         $this->load->model('localisation/geo_zone');
-        if ($this->model_localisation_geo_zone->getTotalZoneToGeoZoneByGeoZoneId($shipping_sameday_settings['shipping_sameday_geo_zone_id']) == 0) {
+        if ($this->model_localisation_geo_zone->getTotalZoneToGeoZoneByGeoZoneId($geo_zone_id) == 0) {
             return false;
         }
 
-        if ($this->model_localisation_geo_zone->getTotalZoneToGeoZoneByCityId($city_id) == 0) {
+        if ($this->model_localisation_geo_zone->getTotalZoneToGeoZoneByGeoZoneIdCityId($geo_zone_id, $city_id) == 0) {
             return false;
         }
 

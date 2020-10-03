@@ -133,4 +133,10 @@ class ModelLocalisationGeoZone extends Model {
 
 		return $query->row['total'];
 	}
+	
+	public function getTotalZoneToGeoZoneByGeoZoneIdCityId($geo_zone_id, $city_id) {
+		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "zone_to_geo_zone WHERE geo_zone_id = '" . (int)$geo_zone_id . "' AND city_id = '" . (int)$city_id . "'");
+
+		return $query->row['total'];
+	}
 }
