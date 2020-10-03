@@ -17,11 +17,11 @@ class ControllerSupercheckoutShippingMethod extends Controller {
             $this->load->model('localisation/country');
             $shipping_address['country_id'] = $this->session->data['shipping_country_id'];
             $shipping_address['zone_id'] = $this->session->data['shipping_zone_id'];
-	        $query = $this->db->query("SELECT code FROM " . DB_PREFIX . "zone WHERE zone_id = '".$this->session->data['shipping_zone_id']."'");
+	    $query = $this->db->query("SELECT code FROM " . DB_PREFIX . "zone WHERE zone_id = '".$this->session->data['shipping_zone_id']."'");
             if(isset($query->row['code'])){
                 $zone_code= $query->row['code'];
             }
-        //$shipping_address['zone_code'] =isset($zone_code)?$zone_code:"";
+//	    $shipping_address['zone_code'] =isset($zone_code)?$zone_code:"";
         } elseif (isset($this->session->data['guest'])) {
 		$this->session->data['guest']['shipping']['zone_id']=$this->session->data['shipping_zone_id'];
 		$this->session->data['guest']['shipping']['country_id']=$this->session->data['shipping_country_id'];
