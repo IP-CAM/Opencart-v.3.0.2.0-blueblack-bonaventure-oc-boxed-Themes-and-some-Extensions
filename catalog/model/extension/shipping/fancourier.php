@@ -318,8 +318,8 @@ class ModelExtensionShippingFANCourier extends Model {
                                     $page = curl_exec ($c);
                                     curl_close ($c);
 
-                                    $servicii_data = str_getcsv($page,"\n"); // COMPATIBIL PENTRU VERSIUNE PHP > 5.3.X
-                                    //$servicii_data = explode("\n",ltrim(rtrim($page))); // COMPATIBIL PENTRU VERSIUNE PHP < 5.2.X
+                                    //$servicii_data = str_getcsv($page,"\n"); // COMPATIBIL PENTRU VERSIUNE PHP > 5.3.X
+                                    $servicii_data = explode("\n",ltrim(rtrim($page))); // COMPATIBIL PENTRU VERSIUNE PHP < 5.2.X
                                      //print_r($servicii_data);
                                     foreach($servicii_data as $tip_serviciu_info){
                                         
