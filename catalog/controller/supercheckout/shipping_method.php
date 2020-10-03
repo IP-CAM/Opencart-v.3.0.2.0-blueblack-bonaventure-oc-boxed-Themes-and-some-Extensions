@@ -391,6 +391,7 @@ class ControllerSupercheckoutShippingMethod extends Controller {
             $xshipping_settings = json_decode($shipping_settings['shipping_xshipping_methods']);
             $index = 0;
             for (;;) {
+                $index++;
                 if (!isset($xshipping_settings['geo_zone_id' . $index])) break;
                 if ($xshipping_settings['status' . $index] != 1) continue;
                 
@@ -406,7 +407,6 @@ class ControllerSupercheckoutShippingMethod extends Controller {
                 if ($this->model_localisation_geo_zone->getTotalZoneToGeoZoneByDetail($geo_zone_id, $country_id, $zone_id, $city_id) > 0) {
                     return true;
                 }
-                $index++;
             }
         }
 
