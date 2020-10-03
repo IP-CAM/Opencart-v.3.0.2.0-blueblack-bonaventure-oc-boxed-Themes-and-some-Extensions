@@ -384,6 +384,31 @@ class ControllerSupercheckoutShippingMethod extends Controller {
             return false;
         }
         
+        $this->load->model('localisation/geo_zone');
+
+        if ($payment_method == "xshipping") {
+            if (!isset($shipping_settings['shipping_xshipping_methods'])) return false;
+            $xshipping_settings = json_decode($shipping_settings['shipping_xshipping_methods']);
+            $index = 0;
+            for (;;) {
+                if (!isset($xshipping_settings['geo_zone_id' . $index])) break;
+                if ($xshipping_settings['status' . $index] != 1) continue;
+                
+                $geo_zone_id = $xshipping_settings['geo_zone_id' . $index];
+                if ($geo_zone_id == 0) return true;
+
+                if ($this->model_localisation_geo_zone->getTotalZoneToGeoZoneByDetail($geo_zone_id, $country_id, 0, 0) > 0) {
+                    return true;
+                }
+                if ($this->model_localisation_geo_zone->getTotalZoneToGeoZoneByDetail($geo_zone_id, $country_id, $zone_id, 0) > 0) {
+                    return true;
+                }
+                if ($this->model_localisation_geo_zone->getTotalZoneToGeoZoneByDetail($geo_zone_id, $country_id, $zone_id, $city_id) > 0) {
+                    return true;
+                }
+            }
+        }
+
         if (!isset($shipping_settings['shipping_' . $payment_method . '_geo_zone_id'])) {
             return true;
         }
@@ -392,8 +417,6 @@ class ControllerSupercheckoutShippingMethod extends Controller {
         if ($geo_zone_id == 0) {
             return true;
         }
-        
-        $this->load->model('localisation/geo_zone');
 
         if ($this->model_localisation_geo_zone->getTotalZoneToGeoZoneByDetail($geo_zone_id, $country_id, 0, 0) > 0) {
             return true;
