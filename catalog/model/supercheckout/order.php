@@ -95,7 +95,7 @@ class ModelSupercheckoutOrder extends Model {
             foreach ($data['totals'] as $order_total) {
 //                    var_dump($order_total);die;
                 $this->db->query("INSERT INTO " . DB_PREFIX . "order_total SET  order_id = '" . (int) $order_id . "', code = '" . $this->db->escape($order_total['code']) . "', title = '" . $this->db->escape($order_total['title']) . "',  `value` = '" . (float) $order_total['value'] . "', sort_order = '" . (int) $order_total['sort_order'] . "'");
-                $total += $order_total['value'];
+                $total += $order_total['value'] == "" ? 0 : $order_total['value'];
             }
 
         }
