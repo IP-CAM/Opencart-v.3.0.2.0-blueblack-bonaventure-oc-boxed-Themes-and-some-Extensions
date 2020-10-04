@@ -244,7 +244,6 @@ class ControllerSupercheckoutShippingMethod extends Controller {
         }
         if (in_array("sameday", array_keys($this->session->data['shipping_methods']))) {
             $data['codeShipping'] = "sameday.sameday";
-            $this->session->data['shipping_method'] = $this->session->data['shipping_methods']['sameday'];
         }
 
         if (isset($this->session->data['comment'])) {
