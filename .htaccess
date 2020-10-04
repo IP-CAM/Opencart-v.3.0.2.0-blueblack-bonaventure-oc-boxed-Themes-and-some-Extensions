@@ -3,11 +3,11 @@ RewriteEngine On
 RewriteRule ^.well-known - [L]
 #redirect http non-www to https://www
 RewriteCond %{HTTPS} off
-RewriteCond %{HTTP_HOST} ^(www\.)?pluscomputer.ro$
+RewriteCond %{HTTP_HOST} ^(www\.)?juniperviewer.com$
 RewriteRule (.*) https://www.juniperviewer.com/$1 [R=301,L]
 #redirect https non-www to www
 RewriteCond %{HTTPS} on
-RewriteCond %{HTTP_HOST} ^pluscomputer.ro$
+RewriteCond %{HTTP_HOST} ^juniperviewer.com$
 RewriteRule (.*) https://www.juniperviewer.com/$1 [R=301,L]
 
 RewriteEngine On
