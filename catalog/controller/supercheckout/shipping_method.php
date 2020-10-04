@@ -43,6 +43,11 @@ class ControllerSupercheckoutShippingMethod extends Controller {
             $data['settings'] = $settings;
 
         }
+        if (isset($data['settings']['step']['shipping_method']['logo']['xshipping.xshipping'])) {
+            for ($i = 1; $i <= 12; $i++) {
+                $data['settings']['step']['shipping_method']['logo']['xshipping.xshipping' . $i] = $data['settings']['step']['shipping_method']['logo']['xshipping.xshipping'];
+            }
+        }
         if(isset($data['settings']['step']['shipping_method']['logo'])){
             foreach ($data['settings']['step']['shipping_method']['logo'] as $key => $value) {
                 if(file_exists('image/'.$value)){
@@ -52,7 +57,7 @@ class ControllerSupercheckoutShippingMethod extends Controller {
                 }
             }
         }
-        
+
         $data['error_no_shipping_product'] = $this->language->get('error_no_shipping_product');
         if (!empty($shipping_address)) {
             if(!isset($shipping_address['city']) && isset($this->session->data['shipping_address']['city'])){
@@ -127,13 +132,13 @@ class ControllerSupercheckoutShippingMethod extends Controller {
                     }
                 }
             }
-             if(isset($quote_data['sameday']['quote']['Transport prin Sameday Curier']['code'])){
-                 $quote_data['sameday']['quote']['Transport prin Sameday Curier']['code'] = 'sameday.sameday';
-             }
+            if(isset($quote_data['sameday']['quote']['Transport prin Sameday Curier']['code'])){
+                $quote_data['sameday']['quote']['Transport prin Sameday Curier']['code'] = 'sameday.sameday';
+            }
             if(isset($quote_data['fancourier']['quote']['Standard']['code'])){
-                 $quote_data['fancourier']['quote']['Standard']['code'] = 'fancourier.fancourier';
-                 $quote_data['fancourier']['quote']['Standard']['title'] = 'Standard';
-             }
+                $quote_data['fancourier']['quote']['Standard']['code'] = 'fancourier.fancourier';
+                $quote_data['fancourier']['quote']['Standard']['title'] = 'Standard';
+            }
             
             $sort_order = array();
 
