@@ -1,3 +1,14 @@
+DirectoryIndex index.php
+RewriteEngine On
+RewriteRule ^.well-known - [L]
+#redirect http non-www to https://www
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^(www\.)?pluscomputer.ro$
+RewriteRule (.*) https://www.pluscomputer.ro/$1 [R=301,L]
+#redirect https non-www to www
+RewriteCond %{HTTPS} on
+RewriteCond %{HTTP_HOST} ^pluscomputer.ro$
+RewriteRule (.*) https://www.pluscomputer.ro/$1 [R=301,L]
 
 RewriteEngine On
 RewriteRule ^.well-known - [L]
