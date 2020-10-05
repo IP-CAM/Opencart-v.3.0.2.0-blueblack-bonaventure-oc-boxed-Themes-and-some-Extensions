@@ -450,7 +450,7 @@ $('select[name=\'country_id\']').trigger('change');
 
         if (json != '') {
           for (i = 0; i < json.length; i++) {
-            html += '<option value="' + json[i]['name'] + '"';
+            html += '<option value="' + json[i]['city_id'] + '"';
 
             if (json[i]['city_id'] == '{{ city_id }}') {
               html += ' selected="selected"';
