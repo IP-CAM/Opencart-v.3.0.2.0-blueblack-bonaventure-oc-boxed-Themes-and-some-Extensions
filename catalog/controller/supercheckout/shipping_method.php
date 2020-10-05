@@ -161,7 +161,7 @@ class ControllerSupercheckoutShippingMethod extends Controller {
         foreach ($this->session->data['available_shipping'] as $key => $value) {
             if ($this->customer->isLogged() && (!isset($_POST['address_id']) || !$this->confirm_shipping_method($key, $customer_address['country_id'], $customer_address['zone_id'], $customer_address['city_id']))) {
                 continue;
-            } else if (!isset($_POST['country_id']) || !isset($_POST['zone_id']) || !isset($_POST['city_id']) || !$this->confirm_shipping_method($key, $this->request->post['country_id'], $this->request->post['zone_id'], $this->request->post['city_id'])) {
+            } else if (!$this->customer->isLogged() && (!isset($_POST['country_id']) || !isset($_POST['zone_id']) || !isset($_POST['city_id']) || !$this->confirm_shipping_method($key, $this->request->post['country_id'], $this->request->post['zone_id'], $this->request->post['city_id']))) {
                 continue;
             }
             if(in_array($key, $all_shipping_keys)){
