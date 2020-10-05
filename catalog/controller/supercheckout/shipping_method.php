@@ -154,6 +154,10 @@ class ControllerSupercheckoutShippingMethod extends Controller {
         $all_shipping = $this->session->data['shipping_methods'];
         $this->session->data['shipping_methods'] = array();
         $all_shipping_keys = array_keys($all_shipping);
+        $customer_address = array();
+        if ($this->customer->isLogged()) {
+            $customer_address = $this->model_account_address->getAddress($this->customer->getAddressId());
+        }
         foreach ($this->session->data['available_shipping'] as $key => $value) {
             if ($this->customer->isLogged() && !$this->confirm_shipping_method($key, $customer_address['country_id'], $customer_address['zone_id'], $customer_address['city_id'])) {
                 continue;
