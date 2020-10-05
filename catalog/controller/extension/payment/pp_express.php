@@ -880,6 +880,7 @@ class ControllerExtensionPaymentPPExpress extends Controller {
 			$data['payment_tax_id'] = isset($payment_address['tax_id']) ? $payment_address['tax_id'] : '';
 			$data['payment_address_1'] = isset($payment_address['address_1']) ? $payment_address['address_1'] : '';
 			$data['payment_address_2'] = isset($payment_address['address_2']) ? $payment_address['address_2'] : '';
+			$data['payment_city_id'] = isset($payment_address['city_id']) ? $payment_address['city_id'] : '';
 			$data['payment_city'] = isset($payment_address['city']) ? $payment_address['city'] : '';
 			$data['payment_postcode'] = isset($payment_address['postcode']) ? $payment_address['postcode'] : '';
 			$data['payment_zone'] = isset($payment_address['zone']) ? $payment_address['zone'] : '';
@@ -912,6 +913,7 @@ class ControllerExtensionPaymentPPExpress extends Controller {
 				$data['shipping_company'] = $shipping_address['company'];
 				$data['shipping_address_1'] = $shipping_address['address_1'];
 				$data['shipping_address_2'] = $shipping_address['address_2'];
+				$data['shipping_city_id'] = $shipping_address['city_id'];
 				$data['shipping_city'] = $shipping_address['city'];
 				$data['shipping_postcode'] = $shipping_address['postcode'];
 				$data['shipping_zone'] = $shipping_address['zone'];
