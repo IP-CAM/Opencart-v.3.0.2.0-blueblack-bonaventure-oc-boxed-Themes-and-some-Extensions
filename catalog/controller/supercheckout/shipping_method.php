@@ -159,9 +159,9 @@ class ControllerSupercheckoutShippingMethod extends Controller {
             $customer_address = $this->model_account_address->getAddress($this->request->post['address_id']);
         }
         foreach ($this->session->data['available_shipping'] as $key => $value) {
-            if ($this->customer->isLogged() && (!isset($_POST['address_id']) || !$this->confirm_shipping_method($key, $customer_address['country_id'], $customer_address['zone_id'], $customer_address['city_id']))) {
+            if ($this->customer->isLogged() && isset($_POST['payment_address']) && $this->request->post['payment_address'] == "existing" && (!isset($_POST['address_id']) || !$this->confirm_shipping_method($key, $customer_address['country_id'], $customer_address['zone_id'], $customer_address['city_id']))) {
                 continue;
-            } else if (!$this->customer->isLogged() && (!isset($_POST['country_id']) || !isset($_POST['zone_id']) || !isset($_POST['city_id']) || !$this->confirm_shipping_method($key, $this->request->post['country_id'], $this->request->post['zone_id'], $this->request->post['city_id']))) {
+            } else if ((!$this->customer->isLogged() || ($this->customer->isLogged() && isset($_POST['payment_address']) && $this->request->post['payment_address'] == "new")) && (!isset($_POST['country_id']) || !isset($_POST['zone_id']) || !isset($_POST['city_id']) || !$this->confirm_shipping_method($key, $this->request->post['country_id'], $this->request->post['zone_id'], $this->request->post['city_id']))) {
                 continue;
             }
             if(in_array($key, $all_shipping_keys)){
