@@ -459,7 +459,7 @@ $('select[name=\'country_id\']').trigger('change');
             html += '>' + json[i]['name'] + '</option>';
           }
         } else {
-          html = '<option value="0" selected="selected">{{ text_none }}</option>';
+          html += '<option value="0" selected="selected">{{ text_none }}</option>';
         }
 
         $('select[name=\'city\']').html(html);
