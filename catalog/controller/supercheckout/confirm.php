@@ -362,7 +362,6 @@ class ControllerSupercheckoutConfirm extends Controller {
                 $order_data['shipping_company'] = isset($shipping_address['company']) ? $shipping_address['company'] : "";
                 $order_data['shipping_address_1'] = isset($shipping_address['address_1']) ? $shipping_address['address_1'] : "";
                 $order_data['shipping_address_2'] = isset($shipping_address['address_2']) ? $shipping_address['address_2'] : "";
-                $order_data['shipping_city_id'] = isset($shipping_address['city_id']) ? $shipping_address['city_id'] : "";
                 $order_data['shipping_city'] = isset($shipping_address['city']) ? $shipping_address['city'] : "";
                 $order_data['shipping_postcode'] = isset($shipping_address['postcode']) ? $shipping_address['postcode'] : "";
                 $order_data['shipping_zone'] = isset($shipping_address['zone']) ? $shipping_address['zone'] : "";
@@ -391,7 +390,6 @@ class ControllerSupercheckoutConfirm extends Controller {
                 $order_data['shipping_address_2'] = '';
                 $order_data['shipping_city'] = '';
                 $order_data['shipping_postcode'] = '';
-                $order_data['shipping_zone'] = '';
                 $order_data['shipping_zone'] = '';
                 $order_data['shipping_zone_id'] = '';
                 $order_data['shipping_country'] = '';

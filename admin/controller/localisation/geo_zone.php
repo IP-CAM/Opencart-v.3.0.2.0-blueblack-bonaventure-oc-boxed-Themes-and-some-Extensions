@@ -9,9 +9,6 @@ class ControllerLocalisationGeoZone extends Controller {
 
 		$this->load->model('localisation/geo_zone');
 
-		$this->load->model('localisation/city');
-		$this->model_localisation_city->insertCityId();
-
 		$this->getList();
 	}
 

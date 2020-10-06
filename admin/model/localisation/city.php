@@ -89,12 +89,4 @@ class ModelLocalisationCity extends Model {
 
 		return $query->row['total'];
 	}
-
-	public function insertCityId() {
-		$query = $this->db->query("SELECT " . DB_PREFIX . "address.address_id, IFNULL(" . DB_PREFIX . "city.city_id,0) AS city_id FROM " . DB_PREFIX . "address LEFT JOIN " . DB_PREFIX . "city ON " . DB_PREFIX . "address.city=" . DB_PREFIX . "city.name AND " . DB_PREFIX . "address.zone_id=" . DB_PREFIX . "city.zone_id");
-		$city_data = $query->rows;
-		foreach ($city_data as $city) {
-			$this->db->query("UPDATE " . DB_PREFIX . "address SET " . DB_PREFIX . "address.city_id = " . (int)$city['city_id'] . " WHERE " . DB_PREFIX . "address.address_id = " . (int)$city['address_id']);
-		}
-	}
 }

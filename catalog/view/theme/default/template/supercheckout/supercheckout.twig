@@ -401,8 +401,8 @@
                                                     <td>
                                                         {{ entry_city }} 
                                                         <span style="display:{% if (logged) %}{% if (settings['option']['logged']['payment_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% else %}{% if (settings['option']['guest']['payment_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% endif %};" class="supercheckout-required">*</span>
-                                                        <select name="city_id" class="supercheckout-large-field js-example-basic-single form-control"></select>
-{#                                                        <input type="text" name="city_id" value="{% if (order_details['payment_city'] is defined) %}{{ order_details['payment_city'] }}{% endif %}" class="supercheckout-large-field" />#}
+                                                        <select name="city" class="supercheckout-large-field js-example-basic-single form-control"></select>
+{#                                                        <input type="text" name="city" value="{% if (order_details['payment_city'] is defined) %}{{ order_details['payment_city'] }}{% endif %}" class="supercheckout-large-field" />#}
                                                     </td>
                                                 </tr>
                                             </table>
@@ -416,8 +416,8 @@
                                                     <td style="width: 50% !important">
                                                         {{ entry_city }} 
                                                         <span style="display:{% if (logged) %}{% if (settings['option']['logged']['payment_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% else %}{% if (settings['option']['guest']['payment_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% endif %};" class="supercheckout-required">*</span>
-                                                        <select name="city_id" class="supercheckout-large-field js-example-basic-single form-control"></select>
-{#                                                        <input type="text" name="city_id" value="{% if (order_details['payment_city'] is defined) %}{{ order_details['payment_city'] }}{% endif %}" class="supercheckout-large-field" />#}
+                                                        <select name="city" class="supercheckout-large-field js-example-basic-single form-control"></select>
+{#                                                        <input type="text" name="city" value="{% if (order_details['payment_city'] is defined) %}{{ order_details['payment_city'] }}{% endif %}" class="supercheckout-large-field" />#}
                                                     </td>
                                                     <td>
                                                         {{ entry_postcode }} 
@@ -433,8 +433,8 @@
                                         <td>
                                             {{ entry_city }} 
                                             <span style="display:{% if (logged) %}{% if (settings['option']['logged']['payment_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% else %}{% if (settings['option']['guest']['payment_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% endif %};" class="supercheckout-required">*</span>
-                                            <select name="city_id" class="supercheckout-large-field js-example-basic-single form-control"></select>
-{#                                            <input type="text" name="city_id" value="{% if (order_details['payment_city'] is defined) %}{{ order_details['payment_city'] }}{% endif %}" class="supercheckout-large-field" />#}
+                                            <select name="city" class="supercheckout-large-field js-example-basic-single form-control"></select>
+{#                                            <input type="text" name="city" value="{% if (order_details['payment_city'] is defined) %}{{ order_details['payment_city'] }}{% endif %}" class="supercheckout-large-field" />#}
                                         </td>
                                     </tr>
                                     <tr class="sort_data" style="padding-left: 5px;display:{% if (settings['option']['logged']['payment_address']['fields']['postcode']['display']) %}{{'block' }}{% else %}{{'none' }}{% endif %};" data-percentage="{{ payment_address_sort_order['fields']['postcode']['sort_order'] }}">
@@ -460,8 +460,8 @@
                                                     <td>
                                                         {{ entry_city }} 
                                                         <span style="display:{% if (logged) %}{% if (settings['option']['logged']['payment_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% else %}{% if (settings['option']['guest']['payment_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% endif %};" class="supercheckout-required">*</span>
-                                                        <select name="city_id" class="supercheckout-large-field js-example-basic-single form-control"></select>
-{#                                                        <input type="text" name="city_id" value="{% if (order_details['payment_city'] is defined) %}{{ order_details['payment_city'] }}{% endif %}" class="supercheckout-large-field" />#}
+                                                        <select name="city" class="supercheckout-large-field js-example-basic-single form-control"></select>
+{#                                                        <input type="text" name="city" value="{% if (order_details['payment_city'] is defined) %}{{ order_details['payment_city'] }}{% endif %}" class="supercheckout-large-field" />#}
                                                     </td>
                                                 </tr>
                                             </table>
@@ -475,8 +475,8 @@
                                                     <td style="width: 50% !important">
                                                         {{ entry_city }} 
                                                         <span style="display:{% if (logged) %}{% if (settings['option']['logged']['payment_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% else %}{% if (settings['option']['guest']['payment_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% endif %};" class="supercheckout-required">*</span>
-                                                        <select name="city_id" class="supercheckout-large-field js-example-basic-single form-control"></select>
-{#                                                        <input type="text" name="city_id" value="{% if (order_details['payment_city'] is defined) %}{{ order_details['payment_city'] }}{% endif %}" class="supercheckout-large-field" />#}
+                                                        <select name="city" class="supercheckout-large-field js-example-basic-single form-control"></select>
+{#                                                        <input type="text" name="city" value="{% if (order_details['payment_city'] is defined) %}{{ order_details['payment_city'] }}{% endif %}" class="supercheckout-large-field" />#}
                                                     </td>
                                                     <td>
                                                         {{ entry_postcode }} 
@@ -492,8 +492,8 @@
                                         <td>
                                             {{ entry_city }} 
                                             <span style="display:{% if (logged) %}{% if (settings['option']['logged']['payment_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% else %}{% if (settings['option']['guest']['payment_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% endif %};" class="supercheckout-required">*</span>
-                                            <select name="city_id" class="supercheckout-large-field js-example-basic-single form-control"></select>
-{#                                            <input type="text" name="city_id" value="{% if (order_details['payment_city'] is defined) %}{{ order_details['payment_city'] }}{% endif %}" class="supercheckout-large-field" />#}
+                                            <select name="city" class="supercheckout-large-field js-example-basic-single form-control"></select>
+{#                                            <input type="text" name="city" value="{% if (order_details['payment_city'] is defined) %}{{ order_details['payment_city'] }}{% endif %}" class="supercheckout-large-field" />#}
                                         </td>
                                     </tr>
                                     <tr class="sort_data" style="padding-left: 5px;display:{% if (settings['option']['guest']['payment_address']['fields']['postcode']['display']) %}{{'block' }}{% else %}{{'none' }}{% endif %};" data-percentage="{{ payment_address_sort_order['fields']['postcode']['sort_order'] }}">
@@ -1022,8 +1022,8 @@
                                                     <td>
                                                         {{ entry_city }} 
                                                         <span style="display:{% if (logged) %}{% if (settings['option']['logged']['shipping_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% else %}{% if (settings['option']['guest']['shipping_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% endif %};" class="supercheckout-required">*</span>
-                                                        <select name="city_id" class="supercheckout-large-field js-example-basic-single form-control"></select>
-{#                                                        <input type="text" name="city_id" value="{% if (order_details['shipping_city'] is defined) %}{{ order_details['shipping_city'] }}{% endif %}" class="supercheckout-large-field" />#}
+                                                        <select name="city" class="supercheckout-large-field js-example-basic-single form-control"></select>
+{#                                                        <input type="text" name="city" value="{% if (order_details['shipping_city'] is defined) %}{{ order_details['shipping_city'] }}{% endif %}" class="supercheckout-large-field" />#}
                                                     </td>
                                                 </tr>
                                             </table>
@@ -1037,8 +1037,8 @@
                                                     <td style="width: 50% !important">
                                                         {{ entry_city }} 
                                                         <span style="display:{% if (logged) %}{% if (settings['option']['logged']['shipping_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% else %}{% if (settings['option']['guest']['shipping_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% endif %};" class="supercheckout-required">*</span>
-                                                        <select name="city_id" class="supercheckout-large-field js-example-basic-single form-control"></select>
-{#                                                        <input type="text" name="city_id" value="{% if (order_details['shipping_city'] is defined) %}{{ order_details['shipping_city'] }}{% endif %}" class="supercheckout-large-field" />#}
+                                                        <select name="city" class="supercheckout-large-field js-example-basic-single form-control"></select>
+{#                                                        <input type="text" name="city" value="{% if (order_details['shipping_city'] is defined) %}{{ order_details['shipping_city'] }}{% endif %}" class="supercheckout-large-field" />#}
                                                     </td>
                                                     <td>
                                                         {{ entry_postcode }} 
@@ -1054,8 +1054,8 @@
                                         <td>
                                             {{ entry_city }} 
                                             <span style="display:{% if (logged) %}{% if (settings['option']['logged']['shipping_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% else %}{% if (settings['option']['guest']['shipping_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% endif %};" class="supercheckout-required">*</span>
-                                            <select name="city_id" class="supercheckout-large-field js-example-basic-single form-control"></select>
-{#                                            <input type="text" name="city_id" value="{% if (order_details['shipping_city'] is defined) %}{{ order_details['shipping_city'] }}{% endif %}" class="supercheckout-large-field" />#}
+                                            <select name="city" class="supercheckout-large-field js-example-basic-single form-control"></select>
+{#                                            <input type="text" name="city" value="{% if (order_details['shipping_city'] is defined) %}{{ order_details['shipping_city'] }}{% endif %}" class="supercheckout-large-field" />#}
                                         </td>
                                     </tr>
                                     <tr class="sort_data" style="padding-left: 5px;display:{% if (settings['option']['logged']['shipping_address']['fields']['postcode']['display']) %}{{'block' }}{% else %}{{'none' }}{% endif %};" data-percentage="{{ shipping_address_sort_order['fields']['postcode']['sort_order'] }}">
@@ -1081,8 +1081,8 @@
                                                     <td>
                                                         {{ entry_city }} 
                                                         <span style="display:{% if (logged) %}{% if (settings['option']['logged']['shipping_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% else %}{% if (settings['option']['guest']['shipping_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% endif %};" class="supercheckout-required">*</span>
-                                                        <select name="city_id" class="supercheckout-large-field js-example-basic-single form-control"></select>
-{#                                                        <input type="text" name="city_id" value="{% if (order_details['shipping_city'] is defined) %}{{ order_details['shipping_city'] }}{% endif %}" class="supercheckout-large-field" />#}
+                                                        <select name="city" class="supercheckout-large-field js-example-basic-single form-control"></select>
+{#                                                        <input type="text" name="city" value="{% if (order_details['shipping_city'] is defined) %}{{ order_details['shipping_city'] }}{% endif %}" class="supercheckout-large-field" />#}
                                                     </td>
                                                 </tr>
                                             </table>
@@ -1096,8 +1096,8 @@
                                                     <td style="width: 50% !important">
                                                         {{ entry_city }} 
                                                         <span style="display:{% if (logged) %}{% if (settings['option']['logged']['shipping_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% else %}{% if (settings['option']['guest']['shipping_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% endif %};" class="supercheckout-required">*</span>
-                                                        <select name="city_id" class="supercheckout-large-field js-example-basic-single form-control"></select>
-{#                                                        <input type="text" name="city_id" value="{% if (order_details['shipping_city'] is defined) %}{{ order_details['shipping_city'] }}{% endif %}" class="supercheckout-large-field" />#}
+                                                        <select name="city" class="supercheckout-large-field js-example-basic-single form-control"></select>
+{#                                                        <input type="text" name="city" value="{% if (order_details['shipping_city'] is defined) %}{{ order_details['shipping_city'] }}{% endif %}" class="supercheckout-large-field" />#}
                                                     </td>
                                                     <td>
                                                         {{ entry_postcode }} 
@@ -1113,8 +1113,8 @@
                                         <td>
                                             {{ entry_city }} 
                                             <span style="display:{% if (logged) %}{% if (settings['option']['logged']['shipping_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% else %}{% if (settings['option']['guest']['shipping_address']['fields']['city']['require']) %}{{'inline' }}{% else %}{{'none' }}{% endif %}{% endif %};" class="supercheckout-required">*</span>
-                                            <select name="city_id" class="supercheckout-large-field js-example-basic-single form-control"></select>
-{#                                            <input type="text" name="city_id" value="{% if (order_details['shipping_city'] is defined) %}{{ order_details['shipping_city'] }}{% endif %}" class="supercheckout-large-field" />#}
+                                            <select name="city" class="supercheckout-large-field js-example-basic-single form-control"></select>
+{#                                            <input type="text" name="city" value="{% if (order_details['shipping_city'] is defined) %}{{ order_details['shipping_city'] }}{% endif %}" class="supercheckout-large-field" />#}
                                         </td>
                                     </tr>
                                     <tr class="sort_data" style="padding-left: 5px;display:{% if (settings['option']['guest']['shipping_address']['fields']['postcode']['display']) %}{{'block' }}{% else %}{{'none' }}{% endif %};" data-percentage="{{ shipping_address_sort_order['fields']['postcode']['sort_order'] }}">
@@ -2102,7 +2102,7 @@ function validatePaymentAddress(){
                     }
 
                     if (json['error']['city']) {
-                        $('#payment-new select[name=\'city_id\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
+                        $('#payment-new select[name=\'city\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
                     }
 
                     if (json['error']['postcode']) {
@@ -2194,7 +2194,7 @@ function validateLoginShippingAddress(){
                             $('#shipping-new input[name=\'address_2\']').after('<span class="errorsmall">' + json['error']['address_2'] + '</span>');
                         }
                         if (json['error']['city']) {
-                            $('#shipping-new select[name=\'city_id\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
+                            $('#shipping-new select[name=\'city\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
                         }
 
                         if (json['error']['postcode']) {
@@ -2303,7 +2303,7 @@ function validateLoginShippingAddress(){
                         $('#shipping-new input[name=\'address_2\']').after('<span class="errorsmall">' + json['error']['address_2'] + '</span>');
                     }
                     if (json['error']['city']) {
-                        $('#shipping-new select[name=\'city_id\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
+                        $('#shipping-new select[name=\'city\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
                     }
 
                     if (json['error']['postcode']) {
@@ -2691,7 +2691,7 @@ function validateGuestPaymentAddress(){
                             $('#payment-new input[name=\'address_2\']').after('<span class="errorsmall">' + json['error']['address_2'] + '</span>');
                         }
                         if (json['error']['city']) {
-                            $('#payment-new select[name=\'city_id\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
+                            $('#payment-new select[name=\'city\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
                         }
 
                         if (json['error']['postcode']) {
@@ -2771,7 +2771,7 @@ function validateGuestPaymentAddress(){
                             $('#payment-new input[name=\'address_2\']').after('<span class="errorsmall">' + json['error']['address_2'] + '</span>');
                         }
                         if (json['error']['city']) {
-                            $('#payment-new select[name=\'city_id\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
+                            $('#payment-new select[name=\'city\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
                         }
 
                         if (json['error']['postcode']) {
@@ -2850,7 +2850,7 @@ function validateGuestShippingAddress(){
                     $('#shipping-new input[name=\'address_2\']').after('<span class="errorsmall">' + json['error']['address_2'] + '</span>');
                 }
                 if (json['error']['city']) {
-                    $('#shipping-new select[name=\'city_id\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
+                    $('#shipping-new select[name=\'city\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
                 }
 
                 if (json['error']['postcode']) {
@@ -3434,7 +3434,7 @@ $('#shipping-new select[name=\'zone_id\']').bind('change', function() {
                 html += '<option value="0" selected="selected">{{ text_none }}</option>';
             }
             
-            $('#shipping-new select[name=\'city_id\']').html(html);
+            $('#shipping-new select[name=\'city\']').html(html);
             validateCheckoutRefresh();
             
             
@@ -3445,7 +3445,7 @@ $('#shipping-new select[name=\'zone_id\']').bind('change', function() {
     });
 });
 
-$('#shipping-new select[name=\'city_id\']').bind('change', function() {
+$('#shipping-new select[name=\'city\']').bind('change', function() {
     validateCheckoutRefresh();
 });
 
@@ -3540,7 +3540,7 @@ $('#payment-new select[name=\'zone_id\']').bind('change', function() {
                 html += '<option value="0" selected="selected">{{ text_none }}</option>';
             }
             
-            $('#payment-new select[name=\'city_id\']').html(html);
+            $('#payment-new select[name=\'city\']').html(html);
             validateCheckoutRefresh();
             
             
@@ -3551,7 +3551,7 @@ $('#payment-new select[name=\'zone_id\']').bind('change', function() {
     });
 });
 
-$('#payment-new select[name=\'city_id\']').bind('change', function() {
+$('#payment-new select[name=\'city\']').bind('change', function() {
     validateCheckoutRefresh();
 });
 
@@ -4394,7 +4394,7 @@ function LoginPaymentAddressRefresh(){
                         $('#payment-new input[name=\'address_2\']').after('<span class="errorsmall">' + json['error']['address_2'] + '</span>');
                     }
                     if (json['error']['city']) {
-                        $('#payment-new select[name=\'city_id\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
+                        $('#payment-new select[name=\'city\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
                     }
 
                     if (json['error']['postcode']) {
@@ -4472,7 +4472,7 @@ function GuestPaymentAddressRefresh(){
                         $('#payment-new input[name=\'address_2\']').after('<span class="errorsmall">' + json['error']['address_2'] + '</span>');
                     }
                     if (json['error']['city']) {
-                        $('#payment-new select[name=\'city_id\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
+                        $('#payment-new select[name=\'city\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
                     }
 
                     if (json['error']['postcode']) {
@@ -4541,7 +4541,7 @@ function GuestPaymentAddressRefresh(){
                         $('#payment-new input[name=\'address_2\']').after('<span class="errorsmall">' + json['error']['address_2'] + '</span>');
                     }
                     if (json['error']['city']) {
-                        $('#payment-new select[name=\'city_id\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
+                        $('#payment-new select[name=\'city\']').after('<span class="errorsmall">' + json['error']['city'] + '</span>');
                     }
 
                     if (json['error']['postcode']) {
