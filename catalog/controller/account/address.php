@@ -386,15 +386,6 @@ class ControllerAccountAddress extends Controller {
 			$data['zone_id'] = '';
 		}
 
-		$data['telephone'] = "";
-		if (isset($this->request->get['address_id'])) {
-			$this->load->model('account/customer');
-			$customer_info = $this->model_account_customer->getCustomer($address_info['customer_id']);
-			if (isset($customer_info)) {
-				$data['telephone'] = $customer_info['telephone'];
-			}
-		}
-
 		$this->load->model('localisation/country');
 
 		$data['countries'] = $this->model_localisation_country->getCountries();
