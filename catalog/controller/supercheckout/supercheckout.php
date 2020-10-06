@@ -3164,7 +3164,7 @@ class ControllerSupercheckoutSuperCheckout extends Controller {
             $this->load->model('supercheckout/order');
             $data = array();
             $data['customer_id'] = '';
-            $data['custom_feilds'] = isset($this->request->post['custom_field']) ? $this->request->post['custom_field'] : array();
+            $data['custom_fields'] = isset($this->request->post['custom_field']) ? $this->request->post['custom_field'] : array();
             $data['customer_group_id'] = $customer_group_id;
             
             $this->model_supercheckout_order->editCustomerId($this->session->data['order_id'], $data);
@@ -3208,7 +3208,7 @@ class ControllerSupercheckoutSuperCheckout extends Controller {
                 $this->load->model('supercheckout/order');
                 $data = array();
                 $data['customer_id'] = $customer_id;
-                $data['custom_feilds'] = $user_table['custom_field'];
+                $data['custom_fields'] = $user_table['custom_field'];
                 $data['customer_group_id'] = $customer_group_id;
                 $this->session->data['guestAccount_customer_id'] = $customer_id;
                 $this->model_supercheckout_order->editCustomerId($this->session->data['order_id'], $data);
