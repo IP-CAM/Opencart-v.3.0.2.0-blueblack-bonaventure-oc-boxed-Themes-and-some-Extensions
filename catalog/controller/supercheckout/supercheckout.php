@@ -2539,7 +2539,9 @@ class ControllerSupercheckoutSuperCheckout extends Controller {
                             $data['postcode'] = "";
                         }
                         if (isset($this->request->post['city'])) {
-                            $data['city'] = trim($this->request->post['city']);
+                            $this->load->model('localisation/city');
+                            $city_info = $this->model_localisation_city->getCity($this->request->post['city']);
+                            $data['city'] = isset($city_info) ? $city_info['name'] : "";
                         } else {
                             $data['city'] = "";
                         }
@@ -2646,7 +2648,9 @@ class ControllerSupercheckoutSuperCheckout extends Controller {
                         $data['postcode'] = "";
                     }
                     if (isset($this->request->post['city'])) {
-                        $data['city'] = trim($this->request->post['city']);
+                        $this->load->model('localisation/city');
+                        $city_info = $this->model_localisation_city->getCity($this->request->post['city']);
+                        $data['city'] = isset($city_info) ? $city_info['name'] : "";
                     } else {
                         $data['city'] = "";
                     }
@@ -2868,7 +2872,9 @@ class ControllerSupercheckoutSuperCheckout extends Controller {
                         $data['postcode'] = "";
                     }
                     if (isset($this->request->post['city'])) {
-                        $data['city'] = trim($this->request->post['city']);
+                        $this->load->model('localisation/city');
+                        $city_info = $this->model_localisation_city->getCity($this->request->post['city']);
+                        $data['city'] = isset($city_info) ? $city_info['name'] : "";
                     } else {
                         $data['city'] = "";
                     }

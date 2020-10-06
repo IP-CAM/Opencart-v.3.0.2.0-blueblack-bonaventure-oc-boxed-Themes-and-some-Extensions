@@ -6,4 +6,9 @@
 			return $query->rows;
 		}
 		
+		public function getCity($city_id) {
+			$query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "city WHERE city_id = '" . (int)$city_id . "'");
+
+			return $query->row;
+		}
 	}
