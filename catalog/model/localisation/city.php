@@ -15,6 +15,6 @@
 		public function getCityId($zone_id, $city_name) {
 			$query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "city WHERE zone_id = '" . (int)$zone_id . "' AND name = '" . $city_name . "'");
 
-			return isset($query->row) ? $query->row['city_id'] : 0;
+			return isset($query->row) && isset($query->row['city_id']) ? $query->row['city_id'] : 0;
 		}
 	}
