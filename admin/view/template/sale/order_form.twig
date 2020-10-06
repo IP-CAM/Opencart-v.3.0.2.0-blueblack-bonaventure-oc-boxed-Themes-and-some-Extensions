@@ -1898,7 +1898,7 @@ $('#button-shipping-address').on('click', function() {
 
 									if (!json['shipping_methods'][i]['error']) {
 										for (j in json['shipping_methods'][i]['quote']) {
-											if (json['shipping_methods'][i]['quote'][j]['code'] == $('select[name=\'shipping_method\'] option:selected').val()) {
+											if (json['shipping_methods'][i]['quote'][j]['code'] == '{{ shipping_code }}') {
 												html += '<option value="' + json['shipping_methods'][i]['quote'][j]['code'] + '" selected="selected">' + json['shipping_methods'][i]['quote'][j]['title'] + ' - ' + json['shipping_methods'][i]['quote'][j]['text'] + '</option>';
 											} else {
 												html += '<option value="' + json['shipping_methods'][i]['quote'][j]['code'] + '">' + json['shipping_methods'][i]['quote'][j]['title'] + ' - ' + json['shipping_methods'][i]['quote'][j]['text'] + '</option>';
